@@ -28,6 +28,7 @@
         tools:targetApi="33">
         <activity
             android:name=".MainActivity"
+            android:windowSoftInputMode="stateVisible"
             android:exported="true"
             android:theme="@style/Theme.TipTime">
             <intent-filter>
