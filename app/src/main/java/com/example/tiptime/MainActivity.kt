@@ -21,6 +21,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
+import androidx.annotation.VisibleForTesting
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -197,8 +198,12 @@ fun RoundTheTipRow(
  * Calculates the tip based on the user input and format the tip amount
  * according to the local currency.
  * Example would be "$10.00".
+ *
+ * The @VisibleForTesting annotation makes the method public, but indicates to others that
+ * it's only public for testing purposes.
  */
-private fun calculateTip(
+@VisibleForTesting
+internal fun calculateTip(
     amount: Double,
     tipPercent: Double = 15.0,
     roundUp: Boolean
